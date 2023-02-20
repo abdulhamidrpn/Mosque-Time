@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container_main_time" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/masjid_default_background"
+            android:transitionName="now_cover_big"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:pathImage="@{viewModel.masjidInfo.image}" />
+
+
+        <ImageButton
+            android:id="@+id/btn_more"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_18sdp"
+            android:layout_marginBottom="@dimen/_18sdp"
+            android:background="@color/transparent"
+            android:padding="@dimen/_4sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/logo"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container_fajar"
+            app:tint="@color/colorTitleText" />
+
+        <ImageView
+            android:id="@+id/qr_image"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_18sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/qr"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container_fajar"
+            app:tint="@color/colorTitleText" />
+
+        <TextView
+            android:id="@+id/tv_message"
+            style="@style/time_display_title_style"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            android:background="@color/white"
+
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:clickable="true"
+            app:html="@{viewModel.masjidInfo.bottomMessage}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_more" />
+        <!--
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_message"
+            style="@style/time_display_title_style"
+            android:layout_width="0dp"
+            android:background="@drawable/bg_square_round"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:padding="@dimen/_4sdp"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+
+            android:text="@{viewModel.masjidInfo.bottomMessage,default=@string/ayatul_kursi}"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_more"
+            app:layout_constraintEnd_toStartOf="@id/btn_more"
+            app:layout_constraintStart_toEndOf="@id/qr_image"
+            app:layout_constraintTop_toBottomOf="@+id/btn_more" />-->
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_name"
+            style="@style/time_display_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="@dimen/_4sdp"
+            android:breakStrategy="balanced"
+            android:gravity="center"
+            android:maxLines="1"
+            android:padding="@dimen/_4sdp"
+            android:text="@string/app_name"
+            android:visibility="invisible"
+            app:autoSizeMaxTextSize="199sp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizePresetSizes="@array/auto_size_text_sizes"
+            app:autoSizeStepGranularity="2sp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--container main time-->
+        <LinearLayout
+            android:id="@+id/container_main_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:background="@drawable/round_view_current_display_time"
+            android:backgroundTint="@color/black"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/container_asr"
+            app:layout_constraintEnd_toStartOf="@+id/container_jumma"
+            app:layout_constraintStart_toEndOf="@+id/container_sunrise"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name">
+
+            <LinearLayout
+
+                android:id="@+id/container_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="@drawable/round_view_current_display_time"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_time_hour"
+                        style="@style/auto_current_time_display_style"
+                        android:gravity="center_vertical|end"
+                        android:maxLines="1"
+                        android:paddingStart="@dimen/_12sdp"
+                        android:text="99" />
+                    <!--                    android:text="@{viewModel.currentTimeHour,default=99}"-->
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textView"
+                        style="@style/auto_current_time_display_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text=" : "
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_time_minute"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tv_time_hour"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_time_minute"
+                        style="@style/auto_current_time_display_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:maxLines="1"
+                        android:text="99"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_time_second"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/textView"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <!--                    android:text="@{viewModel.currentTimeMinute,default=99}"-->
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_time_second"
+                        style="@style/auto_current_time_display_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|start"
+                        android:padding="12dp"
+                        android:paddingEnd="@dimen/_12sdp"
+                        android:text="99"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_36ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tv_time_minute"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <!--                    android:text="@{viewModel.currentTimeSecond,default=99}"-->
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_en_day"
+                    style="@style/time_display_title_style"
+                    android:paddingBottom="@dimen/_2sdp"
+                    android:text="@{viewModel.weekDayFormat,default=@string/time}"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+            <!--DAte Container-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="@dimen/_4sdp">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_en_date"
+                    style="@style/time_display_title_style"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/_4sdp"
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:text="@{viewModel.todayFormat ,default=@string/time}" />
+
+                <View
+                    android:id="@+id/divider_date"
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:background="@color/white"
+                    android:gravity="center" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_date"
+                    style="@style/time_display_title_style"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/_4sdp"
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:text="@{GeneralUtils.INSTANCE.getHijriMonthFormat(viewModel.todayMosqueTime.hijri.date),default=@string/time}" />
+                <!--                    android:text="@{viewModel.todayMosqueTime.hijri.date,default=@string/time}" />-->
+
+
+            </LinearLayout>
+
+
+            <!--  <LinearLayout
+                android:id="@+id/container_en_time_day"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_view_parent"
+                android:backgroundTint="@color/black"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="10dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_en_day"
+                    style="@style/time_display_style"
+                    android:text="@{viewModel.weekDayFormat,default=@string/time}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_time_day"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_view_parent"
+                android:backgroundTint="@color/black"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="10dp"
+                android:textSize="26sp">
+
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_day"
+                    style="@style/time_display_style"
+                    android:text="@{viewModel.todayMosqueTime.hijri.weekday.ar,default=@string/time}" />
+            </LinearLayout>-->
+
+        </LinearLayout>
+
+        <!--Sunrise-->
+        <LinearLayout
+            android:id="@+id/container_sunrise"
+            style="@style/container_wakt"
+            android:layout_width="0dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/container_fajar"
+            app:layout_constraintEnd_toEndOf="@id/container_fajar"
+            app:layout_constraintStart_toStartOf="@id/container_fajar"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_sunrise"
+                style="@style/time_display_title_style"
+                android:text="Sunrise" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_sunrise_time"
+                style="@style/time_display_style"
+                android:text="@{viewModel.todayMosqueTime.sunrise,default=@string/time}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_jumma"
+            style="@style/container_wakt"
+            android:layout_width="0dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/container_isha"
+            app:layout_constraintEnd_toEndOf="@id/container_isha"
+            app:layout_constraintStart_toStartOf="@id/container_isha"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_jumma"
+                style="@style/time_display_title_style"
+                android:text="Jumma" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_jumma_time"
+                style="@style/time_display_style"
+                android:text="@{viewModel.masjidInfo.jumua,default=@string/time}" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_fajar"
+            style="@style/container_wakt"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_50sdp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/container_dhuhr"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_fajar"
+                style="@style/time_display_title_style"
+                android:text="Fajar" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_fajar_time"
+                style="@style/time_display_style"
+                android:text="@{viewModel.todayMosqueTime.timingDetails.fajr,default=@string/time}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_dhuhr"
+            style="@style/container_wakt"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/container_fajar"
+            app:layout_constraintEnd_toStartOf="@+id/container_asr"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/container_fajar"
+            app:layout_constraintTop_toTopOf="@+id/container_fajar">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_dhuhr"
+
+                style="@style/time_display_title_style"
+                android:text="Dhuhr" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_dhuhr_time"
+
+                style="@style/time_display_style"
+                android:text="@{viewModel.todayMosqueTime.timingDetails.dhuhr,default=@string/time}" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_asr"
+            style="@style/container_wakt"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/container_dhuhr"
+            app:layout_constraintEnd_toStartOf="@+id/container_magrib"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/container_dhuhr"
+            app:layout_constraintTop_toTopOf="@+id/container_fajar">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_asr"
+                style="@style/time_display_title_style"
+                android:text="Asr" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_asr_time"
+                style="@style/time_display_style"
+                android:text="@{viewModel.todayMosqueTime.timingDetails.asr,default=@string/time}" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_magrib"
+            style="@style/container_wakt"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/container_asr"
+            app:layout_constraintEnd_toStartOf="@+id/container_isha"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/container_asr"
+            app:layout_constraintTop_toTopOf="@+id/container_fajar">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_magrib"
+                style="@style/time_display_title_style"
+                android:text="Magrib" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_magrib_time"
+                style="@style/time_display_style"
+                android:text="@{viewModel.todayMosqueTime.timingDetails.maghrib,default=@string/time}" />
+
+
+        </LinearLayout>
+        <!--Isha-->
+        <LinearLayout
+            android:id="@+id/container_isha"
+            style="@style/container_wakt"
+
+            android:layout_width="0dp"
+            android:layout_marginEnd="@dimen/_18sdp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/container_magrib"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/container_magrib"
+            app:layout_constraintTop_toTopOf="@+id/container_fajar">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_isha"
+                style="@style/time_display_title_style"
+                android:text="Isha" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_isha_time"
+                style="@style/time_display_style"
+                android:text="@{viewModel.todayMosqueTime.timingDetails.isha,default=@string/time}" />
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <data>
+
+        <import type="com.rpn.mosquetime.utils.GeneralUtils" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.rpn.mosquetime.ui.viewmodel.MainViewModel" />
+
+    </data>
+</layout>

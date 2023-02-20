@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_main">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.rpn.mosquetime.ui.activity.MainActivity"
+        android:label="MainActivity"
+        tools:layout="@layout/activity_main"  />
+
+    <fragment
+        android:id="@+id/navigation_main"
+        android:name="com.rpn.mosquetime.ui.fragment.MainFragment"
+        android:label="@string/title_details"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_navigation_main_to_messageFragment"
+            app:destination="@id/MessageFragment"
+            app:popUpTo="@id/navigation_main"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim">
+
+            <argument
+                android:name="message"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/MessageFragment"
+        android:name="com.rpn.mosquetime.ui.fragment.MessageFragment"
+        android:label="MessageFragment"
+        tools:layout="@layout/fragment_message"  >
+        <action
+            android:id="@+id/action_MessageFragment_to_navigation_main"
+            app:destination="@id/navigation_main"
+
+            app:popUpTo="@+id/navigation_main"
+            app:popUpToInclusive="true"
+
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+    </fragment>
+
+</navigation>

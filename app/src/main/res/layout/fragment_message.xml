@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="com.rpn.mosquetime.utils.GeneralUtils" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.rpn.mosquetime.ui.viewmodel.MainViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Screen elements that can render outside the overscan safe area go here -->
+
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/masjid_default_background"
+            android:transitionName="now_cover_big"
+            app:pathImage="@{viewModel.currentMessage}" />
+
+        <RelativeLayout
+            android:id="@+id/countDownTimer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_countdown"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="00:00"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_150sdp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+        <!-- Nested RelativeLayout with overscan-safe margin -->
+        <RelativeLayout
+            android:id="@+id/container_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:background="@drawable/dialog_card"
+                android:backgroundTint="@color/white"
+                android:gravity="center"
+                android:paddingLeft="@dimen/_16sdp"
+                android:paddingTop="@dimen/_4sdp"
+                android:paddingRight="@dimen/_16sdp"
+                android:paddingBottom="@dimen/_4sdp"
+                android:text="@{viewModel.currentTime,default=@string/time}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_30sdp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

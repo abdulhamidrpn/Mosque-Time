@@ -1,0 +1,93 @@
+<resources>
+    <string name="app_name">Mosque Time</string>
+    <string name="channel_name">Download Information</string>
+    <string name="channel_description">Information about downloading Message</string>
+
+
+    <string name="permission_necessary">Permission Necessary</string>
+    <string name="external_storage_permission">External Storage Permission</string>
+
+    <string name="browse_title">Videos by Your Company</string>
+    <string name="related_movies">Related Videos</string>
+    <string name="grid_view">Grid View</string>
+    <string name="error_fragment">Error Fragment</string>
+    <string name="personal_settings">Personal Settings</string>
+    <string name="watch_trailer_1">Watch trailer</string>
+    <string name="watch_trailer_2">FREE</string>
+    <string name="rent_1">Rent By Day</string>
+    <string name="rent_2">From $1.99</string>
+    <string name="buy_1">Buy and Own</string>
+    <string name="buy_2">AT $9.99</string>
+    <string name="movie">Movie</string>
+
+    <!-- Error messages -->
+    <string name="error_fragment_message">An error occurred</string>
+    <string name="dismiss_error">Dismiss</string>
+
+
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_name">Name</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_phone">Phone Number</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_login">Log In</string>
+    <string name="action_logout">Log Out</string>
+    <string name="action_register">Register</string>
+
+
+    <string name="action_change_time_format">Change Time Format</string>
+    <string name="action_register_text">New user?</string>
+    <string name="action_create_an_account">Create an account</string>
+    <string name="action_create_account">Create account</string>
+
+    <string name="action_sign_in_text">Already have an account?</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="action_log_out_short">Log out</string>
+
+    <string name="welcome">"Welcome !"</string>
+
+    <string name="invalid_email">Not a valid email</string>
+    <string name="invalid_username">Input Username</string>
+    <string name="invalid_phone">Not a valid phone number</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="register_new_mosque">Register New Mosque</string>
+    <string name="update_information">Update Information</string>
+    <string name="title_details">Details</string>
+    <string name="time">12:30</string>
+
+    <string name="ayatul_kursi">اللَّهُ لاَ إِلَهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلاَّ بِمَا شَاءَ وَسِعَ كُرْسِيُّهُ السَّمَاواتِ وَالأَرْضَ وَلاَ يَئُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ</string>
+
+    <string name="spreadsheet_link">https://spreadsheets.google.com/feeds/list/1XyMmbJnKf9OdtwvLNorE4jaUvAWqQZertcW5s82C-HI/od6/public/values?alt=json</string>
+    <string name="spreadsheet_link_1">https://docs.google.com/spreadsheets/d/e/2PACX-1vTgUd-klsLhJF0IRPhPonP9WD1zzSdLcffQpPql7JqlZNZn1NOMqiNRx99SXRpkCjOuoQMMtIfHOivi/pubhtml</string>
+    <string name="spreadsheet_link_2">https://docs.google.com/spreadsheets/d/e/1XyMmbJnKf9OdtwvLNorE4jaUvAWqQZertcW5s82C-HI/pub?output=csv</string>
+
+
+    <string-array name="weekdays">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+
+    <array name="auto_size_text_sizes">
+        <item>30sp</item>
+        <item>40sp</item>
+        <item>50sp</item>
+        <item>60sp</item>
+        <item>70sp</item>
+        <item>80sp</item>
+        <item>90sp</item>
+        <item>100sp</item>
+    </array>
+    <array name="auto_size_text_sizes_time">
+        <item>35sp</item>
+        <item>55sp</item>
+        <item>75sp</item>
+        <item>95sp</item>
+        <item>105sp</item>
+    </array>
+</resources>
