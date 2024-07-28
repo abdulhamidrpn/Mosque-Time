@@ -5,13 +5,13 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
-import android.widget.TextView
+import android.view.animation.AlphaAnimation
+import android.view.animation.AnimationSet
+import android.view.animation.DecelerateInterpolator
+import android.view.animation.TranslateAnimation
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.os.bundleOf
@@ -21,10 +21,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.rpn.mosquetime.R
 import com.rpn.mosquetime.databinding.FragmentMainBinding
-import com.rpn.mosquetime.extensions.convertToList
 import com.rpn.mosquetime.extensions.convertToString
 import com.rpn.mosquetime.extensions.extractFileNameFromImageUri
-import com.rpn.mosquetime.repository.FireStoreRepository
 import com.rpn.mosquetime.ui.activity.LoginActivity
 import com.rpn.mosquetime.utils.DownloadImageTask
 import com.rpn.mosquetime.utils.GeneralUtils.moreDialog
@@ -34,12 +32,11 @@ import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
-import java.util.*
 
 
 class MainFragment : CoroutineFragment() {
-    val settingsUtility by inject<SettingsUtility>()
-    val TAG = "MainFragment"
+    private val settingsUtility by inject<SettingsUtility>()
+    private val TAG = "MainFragment"
     private var _binding: FragmentMainBinding? = null
 
     private val binding get() = _binding!!
@@ -49,18 +46,34 @@ class MainFragment : CoroutineFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
 
         val root: View = binding.root
         return root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        Log.i(TAG, "onCreate")
-        super.onActivityCreated(savedInstanceState)
+    private fun animationSet(): AnimationSet {
+        val slideInAnimation = TranslateAnimation(0.0f, 0.0f, -80.0f, 0.0f).apply {
+            duration = 300 // Duration of the animation
+            fillAfter = true // Maintain the end position after the animation
+        }
 
+        val fadeInAnimation = AlphaAnimation(0.0f, 1.0f).apply {
+            duration = 300 // Duration of the animation
+            fillAfter = true // Maintain the end position after the animation
+        }
 
+        val animationSet = AnimationSet(true).apply {
+            addAnimation(slideInAnimation)
+            addAnimation(fadeInAnimation)
+            interpolator = DecelerateInterpolator() // Smooth deceleration
+        }
+        return animationSet
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         binding.let {
             it.viewModel = mainViewModel
@@ -68,30 +81,20 @@ class MainFragment : CoroutineFragment() {
             it.lifecycleOwner = viewLifecycleOwner
             it.tvMessage.isSelected = true
         }
-        mainViewModel.currentTimeSecond.observe(viewLifecycleOwner, Observer {
-            val aniSlide: Animation = AnimationUtils.loadAnimation(
-                requireContext(),
-                R.anim.side_down
-            )
+
+        mainViewModel.currentTimeSecond.observe(viewLifecycleOwner) {
             binding.tvTimeSecond.text = it
-            binding.tvTimeSecond.startAnimation(aniSlide)
-        })
-        mainViewModel.currentTimeMinute.observe(viewLifecycleOwner, Observer {
-            val aniSlide: Animation = AnimationUtils.loadAnimation(
-                requireContext(),
-                R.anim.side_down
-            )
+            binding.tvTimeSecond.startAnimation(animationSet())
+        }
+        mainViewModel.currentTimeMinute.observe(viewLifecycleOwner) {
             binding.tvTimeMinute.text = it
-            binding.tvTimeMinute.startAnimation(aniSlide)
-        })
-        mainViewModel.currentTimeHour.observe(viewLifecycleOwner, Observer {
-            val aniSlide: Animation = AnimationUtils.loadAnimation(
-                requireContext(),
-                R.anim.side_down
-            )
+            binding.tvTimeMinute.startAnimation(animationSet())
+        }
+        mainViewModel.currentTimeHour.observe(viewLifecycleOwner) {
             binding.tvTimeHour.text = it
-            binding.tvTimeHour.startAnimation(aniSlide)
-        })
+            binding.tvTimeHour.startAnimation(animationSet())
+        }
+
         binding.btnMore.setOnClickListener {
             requireContext().moreDialog { dialog, bindingView ->
                 bindingView.btnLogout.setOnClickListener {
@@ -115,24 +118,22 @@ class MainFragment : CoroutineFragment() {
         }
 
 
-        loginRegisterViewModel.userLiveData.observe(
-            viewLifecycleOwner,
-            androidx.lifecycle.Observer {
-                if (it != null) {
-                    Log.d(TAG, "onActivityCreated: reqest for mosque")
-                    settingsUtility.userId = it.uid
-                    mainViewModel.getMyMosquebyOwnerId {
-                        mainViewModel.setTodayMosqueTime()
-                    }
+        loginRegisterViewModel.userLiveData.observe(viewLifecycleOwner) {
+            if (it != null) {
+                Log.d(TAG, "onActivityCreated: reqest for mosque")
+                settingsUtility.userId = it.uid
+                mainViewModel.getMyMosquebyOwnerId {
+                    mainViewModel.setTodayMosqueTime()
                 }
-            })
+            }
+        }
 
         handleUI()
         imageSaveForOffline()
     }
 
 
-    fun handleUI() {
+    private fun handleUI() {
 
 
         viewLifecycleOwner.lifecycleScope.launch {
@@ -174,12 +175,12 @@ class MainFragment : CoroutineFragment() {
         startActivity(intent)
     }
 
-    fun imageSaveForOffline() {
+    private fun imageSaveForOffline() {
 
         mainViewModel.imgMsg.observe(viewLifecycleOwner, Observer { imgMessage ->
             settingsUtility.messageImages = imgMessage.convertToString()
             //checking file is empty or not
-           mainViewModel.imgMsgDownloaded.clear()
+            mainViewModel.imgMsgDownloaded.clear()
             if (imgMessage.isNotEmpty()) {
                 if (!verifyPermissions()) {
                     return@Observer
@@ -189,10 +190,10 @@ class MainFragment : CoroutineFragment() {
                 imgMessage?.forEach {
                     imageList += "${it?.extractFileNameFromImageUri()}\n"
                 }
-                Log.d(TAG, "imageSaveForOffline: fetchImage is \n" + "$imageList")
+                Log.d(TAG, "imageSaveForOffline: fetchImage is \n$imageList")
                 CoroutineScope(Main).launch {
-                    for (i in 0..imgMessage.size - 1) {
-                        //checking File is avilable in Storage or not
+                    for (i in 0..<imgMessage.size) {
+                        //checking File is available in Storage or not
                         var downloadedImage = async {
                             val fileName = imgMessage[i]?.extractFileNameFromImageUri()
                             DownloadImageTask().isImageIsExist(
@@ -221,19 +222,13 @@ class MainFragment : CoroutineFragment() {
                             mainViewModel.imgMsg.value?.set(i, downloadedImage)
                         }
                     }
-
                     settingsUtility.messageImages = mainViewModel.imgMsg.value.convertToString()
-
-
                 }
-
-
             }
         })
-
     }
 
-    fun verifyPermissions(): Boolean {
+    private fun verifyPermissions(): Boolean {
 
         // This will return the current Status
         val permissionExternalMemory =
@@ -242,7 +237,7 @@ class MainFragment : CoroutineFragment() {
                 Manifest.permission.WRITE_EXTERNAL_STORAGE
             )
         if (permissionExternalMemory != PackageManager.PERMISSION_GRANTED) {
-            val STORAGE_PERMISSIONS = arrayOf<String>(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+            val STORAGE_PERMISSIONS = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE)
             // If permission not granted then ask for permission real time.
             ActivityCompat.requestPermissions(requireActivity(), STORAGE_PERMISSIONS, 1)
             return false
@@ -252,7 +247,7 @@ class MainFragment : CoroutineFragment() {
 
 
     companion object {
-        val CHANNEL_ID = "4747"
+        const val CHANNEL_ID = "4747"
     }
 
 }

@@ -49,7 +49,7 @@ class FileHelperUtilities(private val context: Context) {
         var outputCode = OutputCode.SUCCESS
         val pathData = "image/jpeg"
         val outputName = projectTitle
-//            if (compressionFormat == Bitmap.CompressFormat.PNG) "$projectTitle.png" else "$projectTitle.jpg"
+        //if (compressionFormat == Bitmap.CompressFormat.PNG) "$projectTitle.png" else "$projectTitle.jpg"
 
         val imageOutStream: OutputStream?
 
@@ -74,9 +74,11 @@ class FileHelperUtilities(private val context: Context) {
                 uri = Uri.fromFile(imageFile)
             }
 
-            bitmapToCompress.compress(compressionFormat, compressionOutputQuality, imageOutStream)
-            imageOutStream!!.flush()
-            imageOutStream.close()
+            imageOutStream?.let {
+                bitmapToCompress.compress(compressionFormat, compressionOutputQuality, it)
+            }
+            imageOutStream?.flush()
+            imageOutStream?.close()
 
         } catch (exception: Exception) {
             exceptionMessage = exception.message
