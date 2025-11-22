@@ -17,7 +17,10 @@ This is a Mosque Time application with the backend of Firestore.
 ## Design
 Followed by the Material3 UI design pattern
 #### Tv App Screenshots
+## New UI and animation
+![MosqueTime GIF](https://github.com/user-attachments/assets/476674f2-bc0b-49ce-b87e-90e9d5aa69f4)
 
+## Previous Online Ui
 With one minute delay show image message before and after Salat.
 ![Mosque time Features](https://github.com/user-attachments/assets/504d8013-a3d1-4269-ada3-bd425baa9fa7)
 
