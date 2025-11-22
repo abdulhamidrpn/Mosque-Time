@@ -1,0 +1,154 @@
+[
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_add.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_add.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_logo.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_logo.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_video_library.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_video_library.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_play_circle.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_play_circle.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_replay_10.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_replay_10.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_more_vert.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_more_vert.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_check.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_check.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_play_arrow.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_play_arrow.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_forward_10.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_forward_10.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable-v26_ic_launcher_foreground.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable-v26/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_account_circle.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_account_circle.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_launcher_monochrome.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_launcher_monochrome.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_arrow_back.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_arrow_back.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_notifications_active.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_notifications_active.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_notifications.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_notifications.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_skip_previous.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_skip_previous.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable-nodpi_ic_text_logo.xml.flat",
+        "source": "com.example.jetcaster.mobile-pngs-83:/drawable-nodpi/ic_text_logo.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_pause.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_pause.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_search.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_search.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_playlist_add.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_playlist_add.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_genres.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/genres.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_library_music.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_library_music.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_skip_next.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_skip_next.xml"
+    },
+    {
+        "merged": "com.example.jetcaster.mobile-debug-87:/drawable_ic_delete.xml.flat",
+        "source": "com.example.jetcaster.mobile-main-89:/drawable/ic_delete.xml"
+    }
+]

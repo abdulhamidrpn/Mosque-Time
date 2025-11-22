@@ -1,0 +1,171 @@
+<resources>
+    <string name="app_name">Mosque Time</string>
+
+    <!-- Settings Screen -->
+    <string name="settings">Settings</string>
+    <string name="theme">Theme</string>
+    <string name="basic">Basic</string>
+    <string name="show_mosque_name">Show Mosque Name on Home page</string>
+    <string name="time_format">Time Format</string>
+    <string name="twenty_four_hour_format">24-hour format</string>
+    <string name="default_prayer_times">Default Prayer Times</string>
+    <string name="fajr">Fajr</string>
+    <string name="dhuhr">Dhuhr</string>
+    <string name="asr">Asr</string>
+    <string name="maghrib">Maghrib</string>
+    <string name="isha">Isha</string>
+    <string name="jumah">Jumah</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="background_image">Background Image</string>
+    <string name="current_background">Current: %1$s</string>
+    <string name="default_background">Default</string>
+    <string name="change_background_image">Change Background Image</string>
+    <string name="notifications">Notifications</string>
+    <string name="pre_prayer_notifications">Pre-prayer notifications</string>
+    <string name="post_prayer_notifications">Post-prayer notifications</string>
+    <string name="account_and_sync">Account &amp; Sync</string>
+    <string name="logged_in_as">Logged in as: %1$s</string>
+    <string name="sync_data">Sync Data</string>
+    <string name="logout">Logout</string>
+    <string name="not_logged_in">Not logged in</string>
+    <string name="login_to_sync_data">Login to Sync Data</string>
+    <string name="back_to_main_screen">Back to Main Screen</string>
+    <string name="set_prayer_time">Set %1$s Time</string>
+
+    <!-- Time Picker -->
+    <string name="select_time">Select Time</string>
+    <string name="hour">Hour</string>
+    <string name="minute">Minute</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Background Image Picker -->
+    <string name="select_background_image">Select Background Image</string>
+    <string name="choose_background_image">Choose a background image for your mosque display</string>
+    <string name="selected_image">Selected: %1$s</string>
+    <string name="select">Select</string>
+    <string name="add_image_url">Enter Image URL</string>
+    <string name="url">URL</string>
+    <string name="add">Add</string>
+    <string name="select_image">Select Image</string>
+    <string name="no_image_picker_available">No image picker available</string>
+
+    <!-- Permission Screen -->
+    <string name="welcome_to_app">Welcome to %1$s!</string>
+    <string name="permission_prompt">To provide the best experience, we need a few permissions:</string>
+    <string name="media_audio_access">Media Audio Access</string>
+    <string name="media_audio_access_description">Allows access to audio files on your device.</string>
+    <string name="post_notifications">Notifications</string>
+    <string name="post_notifications_description">Shows playback controls in the notification area.</string>
+    <string name="storage_access">Storage Access</string>
+    <string name="storage_access_description">Allows access to audio/media files.</string>
+    <string name="nearby_devices">Nearby Devices</string>
+    <string name="nearby_devices_description">Connects to Bluetooth speakers and headphones.</string>
+    <string name="alarms_and_reminders">Alarms &amp; Reminders</string>
+    <string name="alarms_and_reminders_description">Required for setting precise sleep timers.</string>
+    <string name="modify_system_settings">Modify System Settings</string>
+    <string name="modify_system_settings_description">Allows setting a song as your ringtone.</string>
+    <string name="continue_button">Continue</string>
+    <string name="permission_granted">Permission Granted</string>
+    <string name="grant">Grant</string>
+
+    <!-- Login Screen -->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="back_to_home">Back to Home</string>
+
+    <!-- Main Screen -->
+    <string name="mosque_time">Mosque Time</string>
+    <string name="welcome_to_the_mosque">Welcome to the mosque</string>
+
+    <!-- Message Screen -->
+    <string name="messages_and_notifications">Messages &amp; Notifications</string>
+    <string name="no_notifications_to_display">No notifications to display</string>
+    <string name="hide">Hide</string>
+    <string name="show">Show</string>
+    <string name="clear_all">Clear All</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="general_message">General Message</string>
+    <string name="no_message_to_display">No message to display</string>
+    <string name="load_message">Load Message</string>
+    <string name="new_message">New Message</string>
+    <string name="system_update">System Update</string>
+    <string name="prayer_time">Prayer Time</string>
+
+    <!-- Other -->
+    <string name="twelve_hour_format">12-hour</string>
+    <string name="twenty_four_hour_format_settings">24-hour</string>
+    <string name="mosque_name_visibility_on">Mosque name visibility On</string>
+    <string name="mosque_name_visibility_off">Mosque name visibility Off</string>
+    <string name="pre_prayer_notification_enabled">Pre-prayer notification enabled</string>
+    <string name="pre_prayer_notification_disabled">Pre-prayer notification disabled</string>
+    <string name="post_prayer_notification_enabled">Post-prayer notification enabled</string>
+    <string name="post_prayer_notification_disabled">Post-prayer notification disabled</string>
+    <string name="prayer_time_updated">%1$s time updated to %2$s</string>
+    <string name="background_image_updated">Background image updated</string>
+    <string name="theme_changed">Theme changed to %1$s</string>
+    <string name="logout_successful">Logout successful</string>
+    <string name="syncing_data">Syncing data...</string>
+    <string name="please_login_first_to_sync_data">Please login first to sync data</string>
+    <string name="unknown_error">Unknown error</string>
+    <string name="user_not_found">User not found</string>
+    <string name="login_failed">Login failed</string>
+    <string name="registration_failed">Registration failed</string>
+    <string name="message_loaded">Message loaded</string>
+    <string name="all_notifications_cleared">All notifications cleared</string>
+    <string name="notification_dismissed">Notification dismissed</string>
+    <string name="am">AM</string>
+    <string name="pm">PM</string>
+
+
+
+
+
+
+
+
+
+    <string name="message_not_available_feature">This feature is not available yet.</string>
+    <string name="message_loading">Loading</string>
+    <string name="display_no_subscribed_podcast">Let\'s discover the podcasts!</string>
+    <string name="message_no_subscribed_podcast">You subscribe no podcast yet. Let\'s discover the podcasts and subscribe them!</string>
+    <string name="display_error_state">Something wrong happened</string>
+    <string name="display_nothing_in_queue">No episode in the queue</string>
+    <string name="message_nothing_in_queue">Discover the Podcast you want to listen to</string>
+    <string name="section_podcast">Podcast</string>
+    <string name="section_latest_episodes">Latest Episodes</string>
+    <string name="label_subscribe">Subscribe</string>
+    <string name="label_unsubscribe">Subscribed</string>
+    <string name="label_info">Info</string>
+    <string name="label_play">Play</string>
+    <string name="label_pause">Pause</string>
+    <string name="label_skip">Skip 10 seconds</string>
+    <string name="label_rewind">Rewind 10 seconds</string>
+    <string name="label_next_episode">Play the next episode</string>
+    <string name="label_previous_episode">Play the previous episode</string>
+    <string name="label_listen">Listen</string>
+    <string name="label_podcast">Podcasts</string>
+    <string name="label_episode">Episodes</string>
+    <string name="label_latest_episode">Latest Episodes</string>
+    <string name="label_navigate_to_discover">Discover the podcasts</string>
+    <string name="label_back_to_home">Back to Home</string>
+    <string name="label_search">Search podcasts by keyword</string>
+    <string name="label_add_playlist">Add to playlist</string>
+
+    <string name="updated_longer">Updated a while ago</string>
+    <plurals name="updated_weeks_ago">
+        <item quantity="one">Updated %d week ago</item>
+        <item quantity="other">Updated %d weeks ago</item>
+    </plurals>
+    <plurals name="updated_days_ago">
+        <item quantity="one">Updated yesterday</item>
+        <item quantity="other">Updated %d days ago</item>
+    </plurals>
+    <string name="updated_today">Updated today</string>
+
+    <string name="episode_date_duration">%1$s &#8226; %2$d mins</string>
+    <string name="elapsed_time">%1$s &#8226; %2$s</string>
+    <string name="minutes_seconds">%1$02d:%2$02d</string>
+    <string name="cd_back">Go Back</string>
+</resources>

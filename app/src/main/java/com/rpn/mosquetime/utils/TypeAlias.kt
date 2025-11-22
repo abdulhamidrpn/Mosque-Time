@@ -1,0 +1,30 @@
+package com.rpn.mosquetime.utils
+
+
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+
+val gson = Gson()
+
+//convert a data class to a map
+fun <T> T.serializeToMap(): Map<*, *> {
+    return convert()
+}
+
+//convert a map to a data class
+inline fun <reified T> Map<*, *>.toDataClass(): T {
+    return convert()
+}
+
+//convert an object of type I to type O
+inline fun <I, reified O> I.convert(): O {
+    val json = gson.toJson(this)
+    return gson.fromJson(json, object : TypeToken<O>() {}.type)
+}
+
+
+typealias OnPrepared<T> = T.() -> Unit
+typealias OnError<T> = T.(error: Throwable) -> Unit
+typealias OnCompletion<T> = T.() -> Unit
+typealias LiveDataFilter<T> = (T) -> Boolean
+
