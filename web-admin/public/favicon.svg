@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" fill="transparent"/>
+  <!-- green crescent -->
+  <circle cx="28" cy="32" r="18" fill="#0b8a2a"/>
+  <circle cx="36" cy="26" r="14" fill="#ffffff"/>
+  <!-- small star -->
+  <polygon points="44,18 46,22 50,22 47,24 48,28 44,26 40,28 41,24 38,22 42,22" fill="#0b8a2a"/>
+</svg>
